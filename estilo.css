@@ -1,0 +1,120 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f3f3f3;
+    font-family: 'Secular One', sans-serif; /*poner la de google fonts*/
+}
+
+a {
+    text-decoration: none; /*para que no tenga el subrayado*/
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 900px;
+    margin: auto; /*para que este centrado*/
+}
+/*------------------*/
+/*      HEADER      */
+/*------------------*/
+
+header {
+    padding: 40px 0px;
+}
+
+/*accedo al div del LOGO*/
+header .logo{
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 20px;
+}
+
+/*accedo al parrafo dentro del logo*/
+header .logo p{
+    color: #9B9B9B;
+}
+
+/*accedo al formulario*/
+header form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/*accedo al input dentro del formulario*/
+header .barra-busqueda{
+    width: 70%;
+    height: 40px;
+    line-height: 40px;
+    background: white;
+    padding: 0 20px;
+    border-radius: 100px;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+}
+
+/*accedo al div de CATEGORIAS*/
+header .categorias{
+    display: flex;
+    justify-content: center; /*todos los elementos centrados*/
+    flex-wrap: wrap; /*para que los elementos se encierren... si hay mas elementos */
+    /*y no caben en el ancho, se ponen debajo, eso gracias a la propiedad flex-wrap*/
+}
+
+/*accedo a los enlaces dentro del div de categorias*/
+header .categorias a{
+    color: #9B9B9B;
+    margin: 10px 20px;
+    font-size: 20px;
+    font-weight: 700px;
+}
+
+/*accedo al enlace que tenga la clase activo, si o si debe ir "a.activo"*/
+header .categorias a.activo{
+    color: #000;
+}
+
+/*--------------------------*/
+/*      SECTION - GRID      */
+/*--------------------------*/
+
+/*accedemos a la seccion con la clase .grid*/
+.grid {
+    position: relative; /*para que la grid y la libreria funcione adecuadamente*/
+    width: 100%; /*100% del ancho del contenedor*/
+
+    opacity: 0;
+    transition: opacity 0.5s linear 1s;
+}
+
+.grid.imagenes-cargadas{
+    opacity: 1;
+}
+
+/*accedemos al primer DIV de la seccion*/
+.grid .item {
+    position: absolute;
+    display: block;
+    padding: 0;
+    margin: 10px;
+    width: calc(33.33333333% - 20px); 
+    /*calculamos el 33% y le restamos 20px, que son los margenes que se ponen a los lados con
+    la propiedad "margin: 10px;"*/
+}
+
+.grid .item-contenido{
+    position: relative;
+}
+
+/*accedemos a la imagen dentro del item-contenedor, que a su vez esta dentro del primer DIV*/
+.grid .item img{
+    width: 100%;
+    cursor: pointer;
+    vertical-align: top;
+}

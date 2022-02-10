@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio - Paz Leonardo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="contenedor">
+        <header>
+            <!-- LOGOTIPO -->
+            <div class="logo">
+                <h1> Paz Leonardo</h1>
+                <p> Desarrollador Web</p>
+            </div>
+            <!-- BARRA -->
+            <form action="">
+                <input type="text" class="barra-busqueda" id="barra-busqueda" placeholder="Buscar">
+            </form>
+            <!-- CATEGORIAS -->
+            <div class="categorias" id="categorias">
+                <a href="#" class="activo">Todos</a>
+                <a href="#">Imagenes</a>
+                <a href="#">Anime</a>
+                <a href="#">Juegos</a>
+            </div>
+        </header>
+
+        <section class="grid" id="grid">
+            <div class="item"
+                data-categoria="imagenes"
+                data-etiquetas="cara feliz random oscuro neon"
+                data-descripcion="1. Se feliz con lo que tienes">
+
+                <div class="item-contenido">
+                    <img src="imagenes/1.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="item"
+                data-categoria="imagenes"
+                data-etiquetas="goku dbz dragonballz dragon ball z kakaroto"
+                data-descripcion="2. El Legendario Super Saiyan">
+                
+                <div class="item-contenido">
+                    <img src="imagenes/2.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="item"
+                data-categoria="anime"
+                data-etiquetas="full metal alchemist alquimia fma filosofal"
+                data-descripcion="3. Para obtener una cosa debes dar algo acambio">
+                
+                <div class="item-contenido">
+                    <img src="imagenes/3.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="item"
+                data-categoria="anime"
+                data-etiquetas="goblin slayer duendes"
+                data-descripcion="4. Anime sangriento y emocionante">
+                
+                <div class="item-contenido">
+                    <img src="imagenes/4.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="item"
+                data-categoria="anime"
+                data-etiquetas="aramdura goblin slayer duendes cazador"
+                data-descripcion="5. El cazador de duendes">
+                
+                <div class="item-contenido">
+                    <img src="imagenes/5.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="item"
+                data-categoria="juegos"
+                data-etiquetas="hyper light drifter neon"
+                data-descripcion="6. Juego retro">
+                
+                <div class="item-contenido">
+                    <img src="imagenes/6.jpg" alt="">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/web-animations-js@2.3.2/web-animations.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/muuri@0.9.5/dist/muuri.min.js"></script>
+    <script src="funciones.js"></script>
+</body>
+</html>

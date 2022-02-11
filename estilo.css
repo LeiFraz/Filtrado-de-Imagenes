@@ -119,3 +119,57 @@ header .categorias a.activo{
     cursor: pointer;
     vertical-align: top;
 }
+
+
+/*--------------------------------------*/
+/*      SECTION - MOSTRAR IMAGENES      */
+/*--------------------------------------*/
+
+.mostrarImagen{
+    position: fixed; /*fijo a la pantalla, podemos scrollear*/
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, .9);
+    width: 100%;
+    height: 100vh; /*VIEWPORT HEIGT*/
+    
+    display: none;
+    align-items: center; /*alineamos de forma vertical*/
+    justify-content: center; /*alineamos de forma horizontal*/
+    
+    flex-direction: column; /*cada componente dentro es un bloque por asi decirlo*/
+}
+
+.mostrarImagen.activo{
+    display: flex;
+}
+
+.mostrarImagen img{
+    max-width: 100%;
+}
+
+.mostrarImagen .descripcion{
+    display: block;
+    background: #f3f3f3;
+    padding: 20px;
+    text-align: center;
+    margin-top: 5px;
+    border-radius: 20px;
+    max-width: 50%;
+}
+
+.contenedorImagen{
+    position: relative;
+}
+
+.mostrarImagen #btnCerrarImagen{
+    background: none;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    right: -22px;
+}

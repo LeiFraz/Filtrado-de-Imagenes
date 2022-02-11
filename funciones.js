@@ -22,7 +22,9 @@ window.addEventListener('load', () => {
     /* accedo a todas las categorias (las cuales tienen el id="categorias") y traigo los enlaces.
     Esto seria ir al DIV con ese id y obtener las etiquetas a*/
 
-    //FILTRADO DE LAS IMAGENES, SEGUN SU CATEGORIA (CLICK EN LOS ENLACES)
+    /*-------------------------------------------------------------------------------*/
+    /*      FILTRADO DE LAS IMAGENES, SEGUN SU CATEGORIA (CLICK EN LOS ENLACES)      */
+    /*-------------------------------------------------------------------------------*/
     enlaces.forEach( (enlace) => {
         //console.log(enlace);
 
@@ -59,7 +61,10 @@ window.addEventListener('load', () => {
     });
     /* por cada enlace se realiza el codigo */
 
-    //FILTRADO DE LAS IMAGENES, CON LA BARRA (INPUT)
+
+    /*----------------------------------------------------------*/
+    /*      FILTRADO DE LAS IMAGENES, CON LA BARRA (INPUT)      */
+    /*----------------------------------------------------------*/
     /* se le añade un evento a la barra de busqueda, y la palabra input... eso significa que cuando
     el usuario escribe algo se activa el evento*/
     document.querySelector('#barra-busqueda').addEventListener('input', (evento) => {
@@ -83,5 +88,43 @@ window.addEventListener('load', () => {
         ejecuta dicha funcion.
         - se accede a la imagen, se obtiene el elemento de la imagen, luego se accede al dataset de las 
         etiquetas y si las etiquetas incluyen lo que se escribió en la busqueda, muestra las imagenes */
-    })
-})
+    });
+
+    /*----------------------------------*/
+    /*      EVENTO DE LAS IMAGENES      */
+    /*----------------------------------*/
+
+    const mostrarImagen = document.getElementById('mostrarImagen');
+    /* buscamos todas las imagenes que se encuentren dentro de la clase item, y que a la vez se 
+    encuentren dentro de la clase grid */
+    document.querySelectorAll('.grid .item img').forEach((elemento) => {
+
+        elemento.addEventListener('click', () => {
+            const ruta = elemento.getAttribute('src');
+            /* como elemento seria una imagen ubicada dentro de varios div, lo que hacemos es decirle:
+            - quiero acceder al padre de la imagen (accediendo al div con la clase item-contenido)
+            - luego le decimos, de nuevo, quiero acceder al padre pero esta vez del div (ahi ya tendriamos el 
+            div con la clase item). Este ultimo tiene los data, por lo que podemos obtener su descripcion, el 
+            cual corresponde con la imagen.*/
+            const descripcion = elemento.parentNode.parentNode.dataset.descripcion;
+
+            mostrarImagen.classList.add('activo');
+            document.querySelector('#mostrarImagen img').src = ruta;
+            document.querySelector('#mostrarImagen .descripcion').innerHTML = descripcion;
+        });
+    });
+
+    /*---------------------------------------------*/
+    /*      EVENTO DEl CIERRE DE LAS IMAGENES      */
+    /*---------------------------------------------*/
+
+    document.querySelector('#btnCerrarImagen').addEventListener('click', () =>{
+        mostrarImagen.classList.remove('activo');
+    });
+
+    mostrarImagen.addEventListener('click', (evento) => {
+        //console.log(evento.target);
+        //console.log(evento.target.id === 'mostrarImagen');
+        evento.target.id === 'mostrarImagen' ? mostrarImagen.classList.remove('activo') : '';
+    });
+});

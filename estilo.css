@@ -17,6 +17,7 @@ a {
     width: 90%;
     max-width: 900px;
     margin: auto; /*para que este centrado*/
+    background: #F3B322; /*SOLO PRUEBO LOS COLORES*/
 }
 /*------------------*/
 /*      HEADER      */

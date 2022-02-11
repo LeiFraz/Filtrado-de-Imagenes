@@ -22,6 +22,7 @@ window.addEventListener('load', () => {
     /* accedo a todas las categorias (las cuales tienen el id="categorias") y traigo los enlaces.
     Esto seria ir al DIV con ese id y obtener las etiquetas a*/
 
+    //FILTRADO DE LAS IMAGENES, SEGUN SU CATEGORIA (CLICK EN LOS ENLACES)
     enlaces.forEach( (enlace) => {
         //console.log(enlace);
 
@@ -57,4 +58,30 @@ window.addEventListener('load', () => {
         
     });
     /* por cada enlace se realiza el codigo */
+
+    //FILTRADO DE LAS IMAGENES, CON LA BARRA (INPUT)
+    /* se le añade un evento a la barra de busqueda, y la palabra input... eso significa que cuando
+    el usuario escribe algo se activa el evento*/
+    document.querySelector('#barra-busqueda').addEventListener('input', (evento) => {
+
+        // accedemos al elemento (barra) y obtenemos el valor
+        const busqueda = evento.target.value; 
+        //console.log(busqueda);
+
+        /* accedemos a cada uno de los items que tenemos y le decimos que traiga los items que 
+           sean de tipo data, al agregar luego de dataset el ".etiquetas", 
+           le decimos que queremos obtener el item que es tipo data y que se llama etiquetas.
+           (data-nombre/data-categorias/data-etiquetas, los que son tipo data) 
+           al añadir ".includes" le decimos que al buscar las etiquetas traiga solamente lo que
+           corresponde con lo que se escribió en la barra de busqueda*/
+        //grid.filter((item) => console.log(item.getElement().dataset.etiquetas) );
+        grid.filter((item) => item.getElement().dataset.etiquetas.includes(busqueda));
+
+        /* De por si la funcion GRID.FILTER muestra los elementos que cumplan con las caracteristicas
+        que se mencionen, en este caso de la funcion anonima. 
+        - Le pasamos el parametro ITEM, y por cada uno de los items (imagenes dentro del DIV) 
+        ejecuta dicha funcion.
+        - se accede a la imagen, se obtiene el elemento de la imagen, luego se accede al dataset de las 
+        etiquetas y si las etiquetas incluyen lo que se escribió en la busqueda, muestra las imagenes */
+    })
 })

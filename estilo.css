@@ -173,3 +173,81 @@ header .categorias a.activo{
     top: 0px;
     right: -22px;
 }
+
+/*-----------------------------------*/
+/*      FOOTER - ESTILOS ICONOS      */
+/*-----------------------------------*/
+
+footer .redesSociales{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+footer .redesSociales a{
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: #000;
+    color: #fff;
+    margin: 20px;
+    text-align: center;
+    border-radius: 200px;
+    transition: .3s ease all;
+}
+
+footer .redesSociales .linkedin{ 
+    color: rgb(7, 133, 206);
+}
+
+footer .redesSociales .gitHub{ 
+    color: rgb(255, 255, 255);
+}
+
+footer .redesSociales .instagram{ 
+    color: rgb(240, 144, 224);
+}
+
+footer .redesSociales a i{
+    font-size: 25px;
+    line-height: 60px;
+}
+
+footer .contenedorIcono:hover a{
+    animation: icono .5s ease;
+}
+
+@keyframes icono {
+    from{
+        transform: rotate3d(0,0,0,0); 
+    }
+    to{
+        transform: rotate3d(0,1,0,360deg); /*eje y, eje x, eje z, rotacion*/
+    }
+}
+
+footer .creadoPor{
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: #c13584;
+}
+
+footer .creadoPor a { color: #000;}
+footer .creadoPor a:hover { text-decoration: underline;}
+
+/*-----------------------------------*/
+/*      FOOTER - ESTILOS ICONOS      */
+/*-----------------------------------*/
+
+@media screen and (max-width: 700px) {
+   .grid .item{
+       width: calc(50% - 20px);
+   }
+
+   header .barra-busqueda{
+       width: 100%;
+   }
+}
